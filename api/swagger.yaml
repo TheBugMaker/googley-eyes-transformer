@@ -1,0 +1,49 @@
+openapi: 3.0.1
+info:
+  title: Image Transformer API
+  description: API for transforming images by adding googley eyes
+  version: 1.0.0
+paths:
+  /transform-image:
+    post:
+      summary: Transform an uploaded image
+      description: Upload an image to be transformed by the ImageTransformer service.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: The image file to be transformed
+      responses:
+        '200':
+          description: Image transformed successfully
+          content:
+            text/html:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request. The request does not include an image file.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: No image file provided
+        '500':
+          description: Internal server error. Something went wrong on the server.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Internal server error
