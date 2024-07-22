@@ -17,7 +17,7 @@ Web application that adds googley eyes to pictures
 
 and then navigate to localhost:5000
 
-# Available commands
+# Available make commands
 ```
 help                           Display this help
 install                        Install dependencies using Poetry
@@ -57,7 +57,7 @@ pyproject.toml
 ## api
 swagger.yaml: This file contains the OpenAPI (Swagger) specification for the API. It documents the available endpoints, request parameters, and responses.
 
-##src
+## src
 This is the main source directory containing the application and its components.
 
 ### app
